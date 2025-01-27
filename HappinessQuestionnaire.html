@@ -1,0 +1,545 @@
+<!--so for the questionnaire what I will do is a bunch of radio boxes which take the value, and just to make it interesting the next question will only popup once the previous question is answered
+and maybe I will ask if they want to do all the 'X' first or not then just chronilogically to get that ordering right.
+ so 29 questions and the maximum questions that can be asked are 6.. so ill read the textbook anyways i have to go over the activity list that akshara sent so 2 birds one stone!-->
+<!--so max value is 29x6 and its going to be a large range up there of incredibly happy-->
+<!--174- 120 -very happy, 119-80- happy, 79- 50- almost there, 49- 0- need to work on it-->
+<!--numbering automatically when a new question appears-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOSH Happiness Questionnaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #2a2a2a;
+      margin-top: 30px;
+    }
+    #quizForm {
+      counter-reset: questionCounter; /* Start the counter */
+    }
+    .question {
+      display: none; /* Hide all questions by default */
+      margin-bottom: 10px;
+      font-size: 16px;
+      counter-increment: questionCounter;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .question.active {
+      display: block; /* Show the active question */
+    }
+    .question label {
+      display: inline-block;
+    }
+    .question input[type="radio"] {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    button {
+        display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    .question::before {
+        content: "Q" counter(questionCounter) ". "; /* Display the counter before each question */
+        font-weight: bold;
+        font-weight: bold;
+        color: #4CAF50;
+    }
+
+  </style>
+</head>
+
+<!--querySelector()-Returns the first child element that matches a CSS selector(s)-->
+<!--1. What is the .active class?
+The .active class is just a CSS class we are using to control visibility. By default, all .question elements are hidden (display: none), but the .active class overrides this to make the element visible (display: block).-->
+<!--classList is a built-in JavaScript property that allows you to manipulate CSS classes for a specific HTML element. It provides methods like:-->
+
+<script>
+    document.querySelectorAll('.question').forEach(question => {
+question.classList.add('active'); // Make all questions visible
+});
+  </script>
+<!--When this is placed here none are becoming active :)-->
+
+<h1>Questionnaire 1</h1>
+
+<form id="quizForm">
+
+    <div class="question active typeB">
+        <!--The class attribute gives this <div> a class name of question.
+        A class is used to apply CSS styling or add JavaScript functionality to specific elements with that class name.-->
+      <label for="q1">I am not very satisfied with who I am as a person.</label><br>
+        <label for="q1-1">1</label>
+        <input type="radio" id="q1-1" name="q1" value="1">
+        <label for="q1-2">2</label>
+        <input type="radio" id="q1-2" name="q1" value="2">
+        <label for="q1-3">3</label>
+        <input type="radio" id="q1-3" name="q1" value="3">
+        <label for="q1-4">4</label>
+        <input type="radio" id="q1-4" name="q1" value="4">
+        <label for="q1-5">5</label>
+        <input type="radio" id="q1-5" name="q1" value="5">
+        <label for="q1-6">6</label>
+        <input type="radio" id="q1-6" name="q1" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q13">I have a deep curiosity about others.</label><br>
+        1<input type="radio" name="q13" value="1">
+        2<input type="radio" name="q13" value="2">
+        3<input type="radio" name="q13" value="3">
+        4<input type="radio" name="q13" value="4">
+        5<input type="radio" name="q13" value="5">
+        6<input type="radio" name="q13" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q14">I find life to be very fulfilling.</label><br>
+        1<input type="radio" name="q14" value="1">
+        2<input type="radio" name="q14" value="2">
+        3<input type="radio" name="q14" value="3">
+        4<input type="radio" name="q14" value="4">
+        5<input type="radio" name="q14" value="5">
+        6<input type="radio" name="q14" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for = "q29"> I feel a sense of warmth and kindness towards most people.</label><br>
+        1<input type="radio" name="q29" value="1">
+        2<input type="radio" name="q29" value="2">
+        3<input type="radio" name="q29" value="3">
+        4<input type="radio" name="q29" value="4">
+        5<input type="radio" name="q29" value="5">
+        6<input type="radio" name="q29" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q2">I often wake up feeling tired and unrested.</label><br>
+        <label for="q2-1">1</label>
+        <input type="radio" id="q2-1" name="q2" value="1">
+        <label for="q2-2">2</label>
+        <input type="radio" id="q2-2" name="q2" value="2">
+        <label for="q2-3">3</label>
+        <input type="radio" id="q2-3" name="q2" value="3">
+        <label for="q2-4">4</label>
+        <input type="radio" id="q2-4" name="q2" value="4">
+        <label for="q2-5">5</label>
+        <input type="radio" id="q2-5" name="q2" value="5">
+        <label for="q2-6">6</label>
+        <input type="radio" id="q2-6" name="q2" value="6">
+      </div>
+
+      
+      <div class="question typeB">
+        <label for="q3">I don't think that the world is a good place</label><br>
+        <label for="q3-1">1</label>
+        <input type="radio" id="q3-1" name="q3" value="1">
+        <label for="q3-2">2</label>
+        <input type="radio" id="q3-2" name="q3" value="2">
+        <label for="q3-3">3</label>
+        <input type="radio" id="q3-3" name="q3" value="3">
+        <label for="q3-4">4</label>
+        <input type="radio" id = "q3-4" name = "q3" value = "4">
+        <label for="q3-5"> 5</label>
+        <input type="radio" id="q3-5" name="q3" value="5">
+        <label for="q3-6">6</label>
+        <input type="radio" id="q3-6" name="q3" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q15">I tend to see humor in most situations.</label><br>
+        1<input type="radio" name="q15" value="1">
+        2<input type="radio" name="q15" value="2">
+        3<input type="radio" name="q15" value="3">
+        4<input type="radio" name="q15" value="4">
+        5<input type="radio" name="q15" value="5">
+        6<input type="radio" name="q15" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q16">I stay dedicated and engaged in everything I do.</label><br>
+        1<input type="radio" name="q16" value="1">
+        2<input type="radio" name="q16" value="2">
+        3<input type="radio" name="q16" value="3">
+        4<input type="radio" name="q16" value="4">
+        5<input type="radio" name="q16" value="5">
+        6<input type="radio" name="q16" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q17">Life is good</label><br>
+        1<input type="radio" name="q17" value="1">
+        2<input type="radio" name="q17" value="2">
+        3<input type="radio" name="q17" value="3">
+        4<input type="radio" name="q17" value="4">
+        5<input type="radio" name="q17" value="5">
+        6<input type="radio" name="q17" value="6">
+      </div>
+
+      <!--<script>
+        document.querySelectorAll('.question').forEach(question => {
+  question.classList.add('active'); // Make all questions visible
+});1
+      </script> so here, line <script> in the <head> or <body>:
+
+If the script is placed in the <head> or at the top of <body>, the browser will execute it immediately as it encounters it during page rendering, before the rest of the HTML is fully loaded (unless deferred or asynchronous).-->
+      
+      <div class="question typeB">
+        <label for="q4"> I feel that I am not particularly attractive.</label><br>
+
+        <label for="q4-1">1</label>
+        <input type="radio" id="q4-1" name="q4" value="1">
+        <label for="q4-2">2</label>
+        <input type="radio" id="q4-2" name="q4" value="2">
+        <label for="q4-3">3</label>
+        <input type="radio" id="q4-3" name="q4" value="3">
+        <label for="q4-4">4</label>
+        <input type="radio" id="q4-4" name="q4" value="4">
+        <label for="q4-5">5</label>
+        <input type="radio" id="q4-5" name="q4" value="5">
+        <label for="q4-6">6</label>
+        <input type="radio" id="q4-6" name="q4" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q18">I laugh alot</label><br>
+        1<input type="radio" name="q18" value="1">
+        2<input type="radio" name="q18" value="2">
+        3<input type="radio" name="q18" value="3">
+        4<input type="radio" name="q18" value="4">
+        5<input type="radio" name="q18" value="5">
+        6<input type="radio" name="q18" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q19">I feel content with all aspects of my life.</label><br>
+        1<input type="radio" name="q19" value="1">
+        2<input type="radio" name="q19" value="2">
+        3<input type="radio" name="q19" value="3">
+        4<input type="radio" name="q19" value="4">
+        5<input type="radio" name="q19" value="5">
+        6<input type="radio" name="q19" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q5">I often feel a disconnect between my goals and my achievements.</label><br>
+
+        <label for="q5-1">1</label>
+        <input type="radio" id="q5-1" name="q5" value="1">
+        <label for="q5-2">2</label>
+        <input type="radio" id="q5-2" name="q5" value="2">
+        <label for="q5-3">3</label>
+        <input type="radio" id="q5-3" name="q5" value="3">
+        <label for="q5-4">4</label>
+        <input type="radio" id="q5-4" name="q5" value="4">
+        <label for="q5-5">5</label>
+        <input type="radio" id="q5-5" name="q5" value="5">
+        <label for="q5-6">6</label>
+        <input type="radio" id="q5-6" name="q5" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q20">I feel a great sense of happiness.</label><br>
+        1<input type="radio" name="q20" value="1">
+        2<input type="radio" name="q20" value="2">
+        3<input type="radio" name="q20" value="3">
+        4<input type="radio" name="q20" value="4">
+        5<input type="radio" name="q20" value="5">
+        6<input type="radio" name="q20" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q21">I am able to see beauty in certain things.</label><br>
+        1<input type="radio" name="q21" value="1">
+        2<input type="radio" name="q21" value="2">
+        3<input type="radio" name="q21" value="3">
+        4<input type="radio" name="q21" value="4">
+        5<input type="radio" name="q21" value="5">
+        6<input type="radio" name="q21" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q22"> I consistently bring cheerfulness to those around me.</label><br>
+        1<input type="radio" name="q22" value="1">
+        2<input type="radio" name="q22" value="2">
+        3<input type="radio" name="q22" value="3">
+        4<input type="radio" name="q22" value="4">
+        5<input type="radio" name="q22" value="5">
+        6<input type="radio" name="q22" value="6">
+      </div>
+      
+      <div class="question typeA">
+        <label for="q23">I am able to make time for everything I want to do</label><br>
+        1<input type="radio" name="q23" value="1">
+        2<input type="radio" name="q23" value="2">
+        3<input type="radio" name="q23" value="3">
+        4<input type="radio" name="q23" value="4">
+        5<input type="radio" name="q23" value="5">
+        6<input type="radio" name="q23" value="6">
+      </div>
+
+      <div class="question typeB">
+        <label for="q6">I often feel like I lack control over my own life.</label><br>
+
+        <label for="q6-1">1</label>
+        <input type="radio" id="q6-1" name="q6" value="1">
+        <label for="q6-2">2</label>
+        <input type="radio" id="q6-2" name="q6" value="2">
+        <label for="q6-3">3</label>
+        <input type="radio" id="q6-3" name="q6" value="3">
+        <label for="q6-4">4</label>
+        <input type="radio" id="q6-4" name="q6" value="4">
+        <label for="q6-5">5</label>
+        <input type="radio" id="q6-5" name="q6" value="5">
+        <label for="q6-6">6</label>
+        <input type="radio" id="q6-6" name="q6" value="6">
+      </div>
+      
+      <div class="question typeA">
+        <label for="q24">I feel confident in handling any challenge.</label><br>
+        1<input type="radio" name="q24" value="1">
+        2<input type="radio" name="q24" value="2">
+        3<input type="radio" name="q24" value="3">
+        4<input type="radio" name="q24" value="4">
+        5<input type="radio" name="q24" value="5">
+        6<input type="radio" name="q24" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q25">My mind feels sharp and focused.</label><br>
+        1<input type="radio" name="q25" value="1">
+        2<input type="radio" name="q25" value="2">
+        3<input type="radio" name="q25" value="3">
+        4<input type="radio" name="q25" value="4">
+        5<input type="radio" name="q25" value="5">
+        6<input type="radio" name="q25" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q26">I often experience elation and joy.</label><br>
+        1<input type="radio" name="q26" value="1">
+        2<input type="radio" name="q26" value="2">
+        3<input type="radio" name="q26" value="3">
+        4<input type="radio" name="q26" value="4">
+        5<input type="radio" name="q26" value="5">
+        6<input type="radio" name="q26" value="6">
+      </div>
+
+      <div class="question typeB">
+        <label for="q7">I struggle to make decisions easily.</label><br>
+        <label for="q7-1">1</label>
+        <input type="radio" id="q7-1" name="q7" value="1">
+        <label for="q7-2">2</label>
+        <input type="radio" id="q7-2" name="q7" value="2">
+        <label for="q7-3">3</label>
+        <input type="radio" id="q7-3" name="q7" value="3">
+        <label for="q7-4">4</label>
+        <input type="radio" id="q7-4" name="q7" value="4">
+        <label for="q7-5">5</label>
+        <input type="radio" id="q7-5" name="q7" value="5">
+        <label for="q7-6">6</label>
+        <input type="radio" id="q7-6" name="q7" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q8">I lack a strong sense of direction and purpose in life.</label><br>
+
+        <label for="q8-1">1</label>
+        <input type="radio" id="q8-1" name="q8" value="1">
+        <label for="q8-2">2</label>
+        <input type="radio" id="q8-2" name="q8" value="2">
+        <label for="q8-3">3</label>
+        <input type="radio" id="q8-3" name="q8" value="3">
+        <label for="q8-4">4</label>
+        <input type="radio" id="q8-4" name="q8" value="4">
+        <label for="q8-5">5</label>
+        <input type="radio" id="q8-5" name="q8" value="5">
+        <label for="q8-6">6</label>
+        <input type="radio" id="q8-6" name="q8" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q27">I often feel I have a great deal of energy.</label><br>
+        1<input type="radio" name="q27" value="1">
+        2<input type="radio" name="q27" value="2">
+        3<input type="radio" name="q27" value="3">
+        4<input type="radio" name="q27" value="4">
+        5<input type="radio" name="q27" value="5">
+        6<input type="radio" name="q27" value="6">
+      </div>
+
+      <div class="question typeA">
+        <label for="q28">I often make a positive impact on the situations around me.</label><br>
+        1<input type="radio" name="q28" value="1">
+        2<input type="radio" name="q28" value="2">
+        3<input type="radio" name="q28" 28value="3">
+        4<input type="radio" name="q28" value="4">
+        5<input type="radio" name="q28" value="5">
+        6<input type="radio" name="q28" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q9">I rarely enjoy spending time with others.</label><br>
+
+        <label for="q9-1">1</label>
+        <input type="radio" id="q9-1" name="q9" value="1">
+        <label for="q9-2">2</label>
+        <input type="radio" id="q9-2" name="q9" value="2">
+        <label for="q9-3">3</label>
+        <input type="radio" id="q9-3" name="q9" value="3">
+        <label for="q9-4">4</label>
+        <input type="radio" id="q9-4" name="q9" value="4">
+        <label for="q9-5">5</label>
+        <input type="radio" id="q9-5" name="q9" value="5">
+        <label for="q9-6">6</label>
+        <input type="radio" id="q9-6" name="q9" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q10">I do not feel particularly healthy.</label><br>
+
+        <label for="q10-1">1</label>
+        <input type="radio" id="q10-1" name="q10" value="1">
+        <label for="q10-2">2</label>
+        <input type="radio" id="q10-2" name="q10" value="2">
+        <label for="q10-3">3</label>
+        <input type="radio" id="q10-3" name="q10" value="3">
+        <label for="q10-4">4</label>
+        <input type="radio" id="q10-4" name="q10" value="4">
+        <label for="q10-5">5</label>
+        <input type="radio" id="q10-5" name="q10" value="5">
+        <label for="q10-6">6</label>
+        <input type="radio" id="q10-6" name="q10" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q11">I do not have particularly happy memories of the past.</label><br>
+
+        <label for="q11-1">1</label>
+        <input type="radio" id="q11-1" name="q11" value="1">
+        <label for="q11-2">2</label>
+        <input type="radio" id="q11-2" name="q11" value="2">
+        <label for="q11-3">3</label>
+        <input type="radio" id="q11-3" name="q11" value="3">
+        <label for="q11-4">4</label>
+        <input type="radio" id="q11-4" name="q11" value="4">
+        <label for="q11-5">5</label>
+        <input type="radio" id="q11-5" name="q11" value="5">
+        <label for="q11-6">6</label>
+        <input type="radio" id="q11-6" name="q11" value="6">
+      </div>
+      
+      <div class="question typeB">
+        <label for="q12">I don’t feel very hopeful about what lies ahead.
+
+        </label><br>
+        1<input type="radio" name="q12" value="1">
+        2<input type="radio" name="q12" value="2">
+        3<input type="radio" name="q12" value="3">
+        4<input type="radio" name="q12" value="4">
+        5<input type="radio" name="q12" value="5">
+        6<input type="radio" name="q12" value="6">
+      </div>
+      
+  
+    <button type="button" id = "submit-button" onclick="calculateResults()">Submit</button>
+</form>
+  
+<div class="result" id="result"></div>
+
+<script>
+    let currentQuestionIndex = 0;
+    const questions = document.querySelectorAll('.question');//.question is for a particular class
+    const submitButton = document.getElementById('submit-button');// and the submit-button is the id of the submit button!!
+
+    // Add event listener to all radio buttons
+    questions.forEach((question, index) => { // the index element is provided by the forEach function and question is one of the DOM elements... so whent he radio button is being changed of a question with apartiular index, then that is the current index value which gets hols... so the next one if already active gets activated again ig since it is an event handler
+      const radios = question.querySelectorAll('input[type="radio"]');
+      radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+              // Show the next question
+              if (index < questions.length - 1) {
+                  questions[index + 1].classList.add('active');
+              }
+              //const selectedOption1 = question.querySelector('input[type="radio"]:checked'); 
+              //console.log(selectedOption1.value);// i did the above 2 lines to debug my code! worled like a charm!
+
+              // Check if the current question is the last one
+              if (index === questions.length - 1) {
+                  submitButton.style.display = 'block'; // Show the Submit button
+              }
+          });
+      });
+
+    });
+
+</script>
+<script>
+  function calculateResults() {
+    let TypeB = 0;
+    let TypeA = 0;
+    let totalScore = 0;
+    const questions = document.querySelectorAll('.question'); // Select all question containers by class
+    
+    // Iterate through each question container
+      // Select all questions with the class 'question' and 'typeB'
+    const typeBQuestions = document.querySelectorAll('.question.typeB');
+
+    typeBQuestions.forEach((question) => {
+      const selectedOption = question.querySelector('input[type="radio"]:checked'); 
+      if (selectedOption) {
+          TypeB += 7 - parseInt(selectedOption.value); // Add its value to the total score
+          
+      }
+    });
+
+    const typeAQuestions = document.querySelectorAll('.question.typeA');
+
+    typeAQuestions.forEach((question) => {
+      const selectedOption = question.querySelector('input[type="radio"]:checked'); 
+      if (selectedOption) {
+          TypeA += parseInt(selectedOption.value); // Add its value to the total score
+      }
+    });
+
+    
+    totalScore= (TypeB + TypeA)/29;
+    let limitedDecimals = totalScore.toFixed(2);
+    // Display result based on score
+    let resultMessage = '';
+    if (totalScore <= 174/29 && totalScore > 120/29) {
+      resultMessage = "You're very happy!";
+    } else if (totalScore <= 120/29 && totalScore > 80/29) {
+      resultMessage = "You're happy";
+    } else {
+      resultMessage = "Keep Going! You're learning and improving!";
+    }
+    
+    document.getElementById('result').textContent = `Your score: ${limitedDecimals}. ${resultMessage}`;
+    //document.getElementById('result').textContent = `Your score: ${totalScore};
+  }
+</script>
+
+</body>
+</html>
+
+
+
