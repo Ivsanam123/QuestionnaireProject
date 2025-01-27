@@ -478,13 +478,20 @@ If the script is placed in the <head> or at the top of <body>, the browser will 
               // Show the next question
               if (index < questions.length - 1) {
                   questions[index + 1].classList.add('active');
+                  const selectedOptionPrev = questions[index].querySelector('input[type="radio"]:checked');
+                  const selectedOptionAfter = questions[index + 1].querySelector('input[type="radio"]:checked');
+                  if(selectedOptionPrev !== null && selectedOptionAfter ===null){
+                      window.scrollBy(0, 100);
+                  }
               }
+              
               //const selectedOption1 = question.querySelector('input[type="radio"]:checked'); 
               //console.log(selectedOption1.value);// i did the above 2 lines to debug my code! worled like a charm!
 
               // Check if the current question is the last one
               if (index === questions.length - 1) {
                   submitButton.style.display = 'block'; // Show the Submit button
+                  window.scrollBy(0, 39);
               }
           });
       });
@@ -534,6 +541,7 @@ If the script is placed in the <head> or at the top of <body>, the browser will 
     }
     
     document.getElementById('result').textContent = `Your score: ${limitedDecimals}. ${resultMessage}`;
+    window.scrollBy(0, 20);
     //document.getElementById('result').textContent = `Your score: ${totalScore};
   }
 </script>
