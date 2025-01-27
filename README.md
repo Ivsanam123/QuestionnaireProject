@@ -11,4 +11,4 @@ This is a happiness questionnaire inspired by the book "The How of Happiness" by
 
   3. Open the `homep.html` file on a live server. You can use tools like Live Server in Visual Studio Code or any other local server tool of your choice.
 
-     or click on the website link: https://ivsanam123.github.io/SOSH/ 
+     or click on the website link: https://ivsanam123.github.io/QuestionnaireProject/ 
